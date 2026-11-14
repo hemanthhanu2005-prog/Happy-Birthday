@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#06020c">
+    <title>Happy Birthday, My Sister ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- CINEMATIC VIGNETTE (Dark corners) -->
+    <div class="vignette-overlay"></div>
+
+    <canvas id="effectsCanvas"></canvas>
+    <div class="ambient-glow"></div>
+    <div id="floatingLayer"></div>
+
+    <!-- MUSIC -->
+    <audio id="backgroundMusic" src="audio/birthday-song.mp3" loop></audio>
+    <audio id="voiceAudio" src="audio\voice-message.mp4"></audio>
+
+    <button class="music-button" id="musicButton" aria-label="Play music">
+        <span id="musicIcon">♫</span>
+        <span id="musicLabel">Play Music</span>
+    </button>
+
+    <!-- HERO: INSTANT BIRTHDAY REVEAL -->
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <p class="eyebrow">A LITTLE SURPRISE FOR SOMEONE SPECIAL</p>
+            <div class="hero-sparkle">✦</div>
+            <h1>Happy Birthday</h1>
+            <h2>My Beautiful Sister <span>♡</span></h2>
+            <p class="hero-description">
+                Today is all about you. You deserve every bit of happiness
+                this beautiful world has to offer.
+            </p>
+            <button class="primary-button" id="celebrateButton">
+                Let the celebration begin <span>✦</span>
+            </button>
+            <div class="scroll-hint">SCROLL TO EXPLORE <span>↓</span></div>
+        </div>
+        <div class="hero-orbit orbit-one"></div>
+        <div class="hero-orbit orbit-two"></div>
+    </header>
+
+    <main>
+
+        <!-- PHOTO MEMORIES -->
+        <section class="section memories-section" id="memories">
+            <div class="section-heading reveal">
+                <p class="eyebrow">LITTLE MOMENTS, BIG MEMORIES</p>
+                <h2>Our Beautiful Memories</h2>
+                <p>Every picture has a story, and every story has you.</p>
+            </div>
+
+            <div class="featured-photos">
+                <div class="photo-card reveal glass-panel">
+                    <img src="img\3.jpeg" alt="Beautiful memory one">
+                    <div class="photo-caption">A memory to treasure ♡</div>
+                </div>
+                <div class="photo-card reveal glass-panel">
+                    <img src="img\1.jpeg" alt="Beautiful memory two">
+                    <div class="photo-caption">My forever favourite picture ✨</div>
+                </div>
+            </div>
+
+            <div class="section-heading gallery-heading reveal">
+                <p class="eyebrow">A COLLECTION OF HAPPINESS</p>
+                <h2>Memory Lane</h2>
+                <p>Tap any photo to see it up close.</p>
+            </div>
+
+            <div class="memory-gallery">
+                <button class="gallery-item reveal glass-panel" data-image="img\7.jpeg"
+                    data-caption="One of my favourite moments ❤️">
+                    <img src="img\7.jpeg" alt="Memory one">
+                    <span>♡</span>
+                </button>
+                <button class="gallery-item reveal glass-panel" data-image="img\6.jpeg"
+                    data-caption="A moment worth remembering ✨">
+                    <img src="img\6.jpeg" alt="Memory two">
+                    <span>♡</span>
+                </button>
+                <button class="gallery-item reveal glass-panel" data-image="img\4.jpeg"
+                    data-caption="Always keep smiling!">
+                    <img src="img\4.jpeg" alt="Memory three">
+                    <span>♡</span>
+                </button>
+                <button class="gallery-item reveal glass-panel" data-image="img\8.jpeg"
+                    data-caption="More beautiful memories ahead 💜">
+                    <img src="img\8.jpeg" alt="Memory four">
+                    <span>♡</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- PERSONAL LETTER + VOICE MESSAGE: SIDE-BY-SIDE -->
+        <div class="personal-messages-row">
+            <section class="section letter-section glass-panel" id="letter">
+                <div class="section-heading reveal">
+                    <p class="eyebrow">WORDS FROM MY HEART</p>
+                    <h2>A Little Letter For You</h2>
+                    <p>Some feelings are better expressed in a letter.</p>
+                </div>
+
+                <div class="envelope-wrap reveal" id="envelope">
+                    <div class="envelope">
+                        <div class="envelope-back"></div>
+                        <div class="letter-paper">
+                            <div class="letter-content">
+                                <span class="letter-heart">♡</span>
+                                <h3>Dear Sister,</h3>
+                                <p>
+                                    Having you in my life is one of the most beautiful gifts.
+                                    Thank you for all the little moments, the smiles,
+                                    the memories and the love.
+                                </p>
+                                <p>
+                                    No matter where life takes us, you'll always have
+                                    a special place in my heart. I wish you endless
+                                    happiness, good health and everything you've been dreaming of.
+                                </p>
+                                <p class="letter-sign">With lots of love, always ❤️</p>
+                            </div>
+                        </div>
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-front"></div>
+                        <div class="envelope-seal">♡</div>
+                    </div>
+                    <button class="primary-button envelope-button" id="envelopeButton">
+                        Open your letter <span>✉</span>
+                    </button>
+                    <p class="tiny-note">Tap the envelope to open it</p>
+                </div>
+            </section>
+
+            <!-- VOICE MESSAGE -->
+            <section class="section voice-section glass-panel">
+                <div class="section-heading reveal">
+                    <p class="eyebrow">A MESSAGE JUST FOR YOU</p>
+                    <h2>Listen the Note</h2>
+                    <p>Some wishes are more special when you hear them.</p>
+                </div>
+
+                <div class="voice-card reveal glass-panel">
+                    <div class="voice-icon cinematic-icon">🎙️</div>
+                    <p class="voice-label">A LITTLE VOICE NOTE</p>
+                    <h3>Just for you, sis</h3>
+                    <p class="voice-description">
+                        I wanted you to hear this birthday wish in my own voice.
+                    </p>
+                    <button class="primary-button" id="voiceButton">
+                        <span id="voiceIcon">▶</span>
+                        <span id="voiceLabel">Play my message</span>
+                    </button>
+                    <p class="tiny-note">A little message, from the heart.</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- 3D CAKE -->
+        <section class="section cake-section">
+            <div class="section-heading reveal">
+                <p class="eyebrow">MAKE A WISH</p>
+                <h2>A Cake Just For You</h2>
+                <p>Close your eyes, make a wish and blow the candles.</p>
+            </div>
+
+            <div class="cake-area reveal">
+                <div class="cake-stage">
+                    <div class="cake-glow cinematic-glow"></div>
+                    <div class="cake">
+                        <div class="candles">
+                            <div class="candle"><span class="flame"></span><span class="smoke"></span></div>
+                            <div class="candle"><span class="flame"></span><span class="smoke"></span></div>
+                            <div class="candle"><span class="flame"></span><span class="smoke"></span></div>
+                            <div class="candle"><span class="flame"></span><span class="smoke"></span></div>
+                            <div class="candle"><span class="flame"></span><span class="smoke"></span></div>
+                        </div>
+                        <div class="cake-top"><span class="cake-berry berry-one"></span><span
+                                class="cake-berry berry-two"></span><span class="cake-berry berry-three"></span></div>
+                        <div class="cake-layer layer-top"><span class="icing-drip"></span></div>
+                        <div class="cake-layer layer-middle"><span class="icing-drip"></span></div>
+                        <div class="cake-layer layer-bottom"><span class="icing-drip"></span></div>
+                        <div class="cake-plate"><span>
+                                <center>HAPPY BIRTHDAY AKKA</center>
+                            </span></div>
+                    </div>
+                    <div class="cake-sparkles" aria-hidden="true">✦ ✧ ✦ ✧ ✦</div>
+                </div>
+                <p class="wish-message" id="wishMessage">Your wish is waiting to come true ✨</p>
+                <button class="primary-button" id="blowButton">Blow the candles ✨</button>
+            </div>
+        </section>
+
+        <!-- MYSTERY GIFT -->
+        <section class="section gift-section">
+            <div class="section-heading reveal">
+                <p class="eyebrow">ONE MORE SURPRISE</p>
+                <h2>Something Special For You</h2>
+                <p>There is a little surprise waiting inside this box.</p>
+            </div>
+
+            <div class="gift-area reveal">
+                <div class="gift-side-decor gift-side-left" aria-hidden="true">
+                    <span class="gift-decor-star">✦</span>
+                    <span class="gift-decor-heart">♥</span>
+                    <span class="gift-decor-spark">✧</span>
+                    <span class="gift-decor-star">✦</span>
+                </div>
+                <div class="gift-side-decor gift-side-right" aria-hidden="true">
+                    <span class="gift-decor-heart">♥</span>
+                    <span class="gift-decor-star">✧</span>
+                    <span class="gift-decor-spark">✦</span>
+                    <span class="gift-decor-heart">♥</span>
+                </div>
+                <div class="gift-spotlight" aria-hidden="true"></div>
+                <button class="gift-box" id="giftBox" aria-label="Open your mystery gift">
+                    <span class="gift-bow"></span>
+                    <span class="gift-lid"></span>
+                    <span class="gift-body"></span>
+                    <span class="gift-ribbon"></span>
+                    <span class="gift-sparkle">✦</span>
+                </button>
+                <p class="gift-hint" id="giftHint">Tap the gift box to unwrap your surprise</p>
+                <div class="gift-video-reveal" id="giftVideoReveal" aria-hidden="true">
+                    <div class="gift-video-frame">
+                        <video id="giftVideo" controls playsinline preload="metadata">
+                            <source src="vedio\IMG_0811.MOV" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <p class="gift-video-caption">A little surprise, made with love ❤️</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CELEBRATION -->
+        <section class="final-section" id="finalWish">
+            <div class="final-content">
+                <p class="eyebrow">AND FINALLY...</p>
+                <div class="final-star">✦</div>
+                <h2>Keep Shining,<br><span>My Forever Star.</span></h2>
+                <p class="final-message">
+                    No matter how much we grow, where life takes us,
+                    or how many years pass by, you'll always be
+                    my favourite sister and a beautiful part of my world.
+                </p>
+                <h3>Happy Birthday! ❤️</h3>
+                <button class="primary-button" id="fireworksButton">
+                    Celebrate One More Time ✨
+                </button>
+                <p class="final-footer">Made with endless love, just for you.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- PHOTO LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close photo">×</button>
+        <img id="lightboxImage" src="" alt="Selected memory">
+        <p id="lightboxCaption"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
